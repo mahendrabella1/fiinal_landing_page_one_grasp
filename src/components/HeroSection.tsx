@@ -2,7 +2,9 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, Award } from "lucide-react";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
-import HeroMentor from "@/assets/Gemini_Generated_Image_rdj97vrdj97vrdj9.png";
+// Use the public folder image at `/a.png` for production deployments
+// (assets in `public/` are served at the site root)
+const HeroMentor = '/a.png';
 
 const HeroSection = () => {
   const stats = [
