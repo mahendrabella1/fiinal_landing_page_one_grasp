@@ -195,7 +195,7 @@ const HeroSection = () => {
               animate={controls}
               className="mb-6 inline-block relative"
             >
-              <span aria-hidden className="absolute -z-10 w-36 h-36 rounded-full bg-gradient-to-r from-primary/20 to-transparent blur-xl opacity-30" />
+              <span aria-hidden="true" className="absolute -z-10 w-36 h-36 rounded-full bg-gradient-to-r from-primary/20 to-transparent blur-xl opacity-30" />
               {headingWords.map((word, i) => (
                 <motion.span key={i} variants={headingChild} className="inline-block mr-2 text-2xl md:text-3xl font-extrabold text-primary">
                   {word}
