@@ -29,21 +29,12 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-soft py-3"
-          : "bg-transparent py-4"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-md py-3`}
     >
       <div className="container-custom flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
-          <div className="flex items-center">
-            <span className="text-2xl font-display font-extrabold">
-              <span className="text-primary">One</span>
-              <span className={isScrolled ? "text-foreground" : "text-foreground"}>Grasp</span>
-            </span>
-          </div>
+        <a href="/" className="flex items-center gap-2">
+          <img src="/onegrasp-logo.webp" alt="OneGrasp" className="h-8 md:h-10 lg:h-12 object-contain" />
         </a>
 
         {/* Desktop Navigation */}
@@ -52,9 +43,7 @@ const Navbar = () => {
             <a
               key={link.label}
               href={link.href}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
-                isScrolled ? "text-foreground" : "text-foreground"
-              }`}
+              className={`text-sm font-semibold transition-colors text-foreground hover:text-primary`}
             >
               {link.label}
             </a>
@@ -65,7 +54,7 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center gap-4">
           <a
             href="tel:+918977760442"
-            className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+            className="flex items-center gap-2 text-sm font-semibold text-foreground hover:text-primary transition-colors"
           >
             <Phone className="h-4 w-4" />
             +91 89777 60442
@@ -86,13 +75,13 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <AnimatePresence>
-        {isMobileMenuOpen && (
+          {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-background border-t border-border"
+            className="lg:hidden bg-white border-t border-border"
           >
             <div className="container-custom py-6 space-y-4">
               {navLinks.map((link) => (
@@ -100,7 +89,7 @@ const Navbar = () => {
                   key={link.label}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block py-2 text-foreground font-medium hover:text-primary transition-colors"
+                  className="block py-2 text-foreground font-semibold hover:text-primary transition-colors"
                 >
                   {link.label}
                 </a>
@@ -108,7 +97,7 @@ const Navbar = () => {
               <div className="pt-4 border-t border-border space-y-3">
                 <a
                   href="tel:+918977760442"
-                  className="flex items-center gap-2 text-sm text-muted-foreground"
+                  className="flex items-center gap-2 text-sm font-semibold text-foreground"
                 >
                   <Phone className="h-4 w-4" />
                   +91 89777 60442
